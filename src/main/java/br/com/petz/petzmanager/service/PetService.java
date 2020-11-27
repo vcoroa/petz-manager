@@ -13,7 +13,7 @@ public interface PetService {
 	
 	List<Pet> listarPorCliente(Cliente cliente);
 	
-	void cadastrar(Pet cliente);
+	Pet cadastrar(Pet cliente);
 	
 	Pet atualizar(Pet cliente);
 	

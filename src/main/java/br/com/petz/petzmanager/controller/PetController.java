@@ -54,7 +54,7 @@ public class PetController {
 	@PostMapping
 	@Transactional
 	public ResponseEntity<PetDTO> cadastrar(@RequestBody @Valid Pet pet, UriComponentsBuilder uriBuilder) {
-		petService.cadastrar(pet);
+		pet = petService.cadastrar(pet);
 		URI uri = uriBuilder.path("/pets/{id}").buildAndExpand(pet.getIdPet()).toUri();
 		return ResponseEntity.created(uri).body(new PetDTO(pet));
 	}

@@ -10,7 +10,7 @@ public interface ClienteService {
 
 	List<Cliente> listarPorNome(String nome);
 	
-	void cadastrar(Cliente cliente);
+	Cliente cadastrar(Cliente cliente);
 	
 	Cliente atualizar(Cliente cliente);
 	

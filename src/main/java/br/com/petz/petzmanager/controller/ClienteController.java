@@ -48,7 +48,7 @@ public class ClienteController {
 	@PostMapping
 	@Transactional
 	public ResponseEntity<ClienteDTO> cadastrar(@RequestBody @Valid Cliente cliente, UriComponentsBuilder uriBuilder) {
-		clienteService.cadastrar(cliente);
+		cliente = clienteService.cadastrar(cliente);
 		URI uri = uriBuilder.path("/clientes/{id}").buildAndExpand(cliente.getIdCliente()).toUri();
 		return ResponseEntity.created(uri).body(new ClienteDTO(cliente));
 	}
